@@ -27,7 +27,6 @@ def getProducts(baseUrl, apiKey, manufacturer, page = 1):
 		return request.json()
 
 def main(args = parseArgs()):
-	#baseUrl = 'https://api.bestbuy.com/v1/products'
 	prices = {}
 	totalProducts = 0
 	page = 1
