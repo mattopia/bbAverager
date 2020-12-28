@@ -40,7 +40,7 @@ def main(args = parseArgs()):
 		totalPages = results['totalPages']
 		for product in results['products']:
 			totalProducts += 1
-			subclass = product['subclass']
+			subclass = product['subclass'] or "NONE"
 			price = product['regularPrice']
 			if subclass not in prices:
 				prices[subclass] = { 'count': 0, 'total': 0 }
