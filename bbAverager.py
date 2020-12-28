@@ -34,6 +34,9 @@ def main(args = parseArgs()):
 
 	while page <= totalPages:
 		results = getProducts(args.baseUrl, args.apiKey, args.manufacturer, page)
+		if results['total'] == 0:
+			print("The query returned zero results.")
+			exit(1)
 		totalPages = results['totalPages']
 		for product in results['products']:
 			totalProducts +=+ 1
