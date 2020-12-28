@@ -1,6 +1,6 @@
 # bbAverager.py - Calculate average prices on BestBuy.com for a given manufacturer
 
-This script will query the BestBuy.com API for all products by a given manufacturer. For each unique product category, an average price of all return products is calculated. 
+This script will query the BestBuy.com API for all products by a given manufacturer. For each unique product category, an average price of all return products is calculated. The API returns paginated results -- the script will handle pagination, ensuring all results are calculated in the average.
 
 ## Requirements
  - Python 3.x

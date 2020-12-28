@@ -36,7 +36,7 @@ def main(args = parseArgs()):
 		results = getProducts(args.baseUrl, args.apiKey, args.manufacturer, page)
 		totalPages = results['totalPages']
 		for product in results['products']:
-			totalProducts = totalProducts + 1
+			totalProducts +=+ 1
 			subclass = product['subclass']
 			price = product['regularPrice']
 			if subclass not in prices:
@@ -45,7 +45,7 @@ def main(args = parseArgs()):
 				'count': prices[subclass]['count'] + 1, 
 				'total': prices[subclass]['total'] + price
 			}
-		page = page + 1
+		page += 1
 
 	# Find the longest subclass name for formatting purposes
 	col_width = max(len(key) for key in prices) + 2
