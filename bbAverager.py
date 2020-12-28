@@ -39,7 +39,7 @@ def main(args = parseArgs()):
 			exit(1)
 		totalPages = results['totalPages']
 		for product in results['products']:
-			totalProducts +=+ 1
+			totalProducts += 1
 			subclass = product['subclass']
 			price = product['regularPrice']
 			if subclass not in prices:
