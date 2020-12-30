@@ -26,7 +26,7 @@ def getProducts(baseUrl, apiKey, manufacturer, page = 1):
 			exit(1)
 		return request.json()
 
-def main(args = parseArgs()):
+def main(args):
 	prices = {}
 	totalProducts = 0
 	page = 1
@@ -60,4 +60,4 @@ def main(args = parseArgs()):
 	print(f"Total products: {totalProducts}")
 
 if __name__ == "__main__":
-	main()
+	main(parseArgs())
