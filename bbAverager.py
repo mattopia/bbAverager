@@ -43,19 +43,16 @@ def main(args):
 			subclass = product['subclass'] or "NONE"
 			price = product['regularPrice']
 			if subclass not in prices:
-				prices[subclass] = { 'count': 0, 'total': 0 }
-			prices[subclass] = { 
-				'count': prices[subclass]['count'] + 1, 
-				'total': prices[subclass]['total'] + price
-			}
+				prices[subclass] = []
+			prices[subclass].append(price)
 		page += 1
 
 	# Find the longest subclass name for formatting purposes
 	col_width = max(len(key) for key in prices) + 2
 
 	for subclass, prices in prices.items():
-		avg = round(prices['total'] / prices['count'], 2)
-		print(f"{subclass:<{col_width}} ${avg:>}")
+		avg = round(sum(prices) / len(prices), 2)
+		print(f"{subclass:<{col_width}} {len(prices):>5} ${avg:>}")
 
 	print(f"Total products: {totalProducts}")
 
